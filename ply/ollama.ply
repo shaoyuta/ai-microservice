@@ -1,0 +1,19 @@
+# https://github.com/ollama/ollama/blob/main/docs/api.md
+
+List Local Models:
+  url: http://localhost:11434/api/tags
+  method: GET
+  headers:
+    Content-Type: application/json
+
+api/generate:
+  url: http://localhost:11434/api/generate
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "llama3"
+    }
+
+
