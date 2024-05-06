@@ -16,4 +16,15 @@ api/generate:
       "model": "llama3"
     }
 
+api/generate stream=false:
+  url: http://localhost:11434/api/generate
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "llama3",
+      "prompt": "Why is the sky blue?",
+      "stream": false
+    }
 

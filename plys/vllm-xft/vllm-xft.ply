@@ -1,0 +1,17 @@
+List Local Models:
+  url: http://localhost:8000/v1/models
+  method: GET
+
+Chat:
+  url: http://localhost:8000/v1/completions
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "/data/Llama-2-7b-chat-hf-xft/",
+      "prompt": "Once upon a time",
+      "max_tokens": 200,
+      "temperature": 0.9
+    }
+

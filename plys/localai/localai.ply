@@ -1,0 +1,38 @@
+List Local Models:
+  url: http://localhost:8080/v1/models
+  method: GET
+
+Chat ggml-gpt4all-j:
+  url: http://localhost:8080/v1/chat/completions
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "ggml-gpt4all-j",
+      "messages": [{"role": "user", "content": "What are you doing"}],
+      "temperature": 0.9
+    }
+
+Chat GPT4:
+  url: http://localhost:8080/v1/chat/completions
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "gpt-4",
+      "messages": [{"role": "user", "content": "What are you doing"}],
+      "temperature": 0.9
+    }
+
+Text Embeding:
+  url: http://localhost:8080/embeddings
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "input": "Your text string goes here",
+      "model": "text-embedding-ada-002"
+    }
