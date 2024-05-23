@@ -1,16 +1,29 @@
 List Local Models:
-  url: http://localhost:8000/v1/models
+  url: http://10.239.61.12:8000/v1/models
   method: GET
 
 Chat:
-  url: http://localhost:8000/v1/completions
+  url: http://10.239.61.12:8000/v1/completions
   method: POST
   headers:
     Content-Type: application/json
   body: |-
     {
-      "model": "/data/Llama-2-7b-chat-hf-xft/",
-      "prompt": "Once upon a time",
+      "model": "/data/Qwen-7B-Chat-xft/",
+      "prompt": "Who are you?",
+      "max_tokens": 200,
+      "temperature": 0.9
+    }
+
+Chat with stream:
+  url: http://10.239.61.12:8000/v1/completions
+  method: POST
+  headers:
+    Content-Type: application/json
+  body: |-
+    {
+      "model": "/data/Qwen-7B-Chat-xft/",
+      "prompt": "请介绍一下英国",
       "max_tokens": 200,
       "temperature": 0.9
     }

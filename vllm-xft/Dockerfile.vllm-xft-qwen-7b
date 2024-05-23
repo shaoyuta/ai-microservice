@@ -1,4 +1,4 @@
-FROM registry.cn-shanghai.aliyuncs.com/taosy/vllm-xft-base:0.01 AS build
+FROM registry.cn-shanghai.aliyuncs.com/taosy/vllm-xft-base:0.02 AS build
 ARG HF_ENDPOINT
 ARG HF_TOKEN
 
@@ -26,7 +26,7 @@ RUN rm /root/.cache/huggingface/ /data/Qwen-7B-Chat/ -fr
 
 
 # Copy files to target image
-FROM registry.cn-shanghai.aliyuncs.com/taosy/vllm-xft-base:0.01
+FROM registry.cn-shanghai.aliyuncs.com/taosy/vllm-xft-base:0.02
 
 COPY --from=build /data /data
 
